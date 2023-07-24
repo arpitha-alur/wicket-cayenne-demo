@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-map xmlns="http://cayenne.apache.org/schema/10/modelMap"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://cayenne.apache.org/schema/10/modelMap https://cayenne.apache.org/schema/10/modelMap.xsd"
+	 project-version="10">
+	<property name="defaultPackage" value="org.example.cayenne.persistent"/>
+	<db-entity name="Book">
+		<db-attribute name="AUTHOR" type="VARCHAR"/>
+		<db-attribute name="ID" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="ISBN" type="VARCHAR"/>
+		<db-attribute name="TITLE" type="VARCHAR"/>
+	</db-entity>
+	<obj-entity name="Book" className="org.example.cayenne.persistent.Book" dbEntityName="Book">
+		<obj-attribute name="author" type="java.lang.String" db-attribute-path="AUTHOR"/>
+		<obj-attribute name="isbn" type="java.lang.String" db-attribute-path="ISBN"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="TITLE"/>
+	</obj-entity>
+</data-map>
